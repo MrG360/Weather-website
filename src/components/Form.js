@@ -2,10 +2,10 @@ import React from "react";
 class Form extends React.Component{
     render(){
         return(
-           <div className="App">
+           <div className="div-search-bar">
                <form onSubmit={this.props.getWeather}>
                <input type="text" name="city" placeholder="Enter city name here..."/>
-               <button >Search</button>
+               <button className="search-btn" >Search</button>
                </form>
            </div> 
         );
