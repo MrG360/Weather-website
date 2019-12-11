@@ -23,8 +23,12 @@ class App extends React.Component {
 		sunrise: undefined,
 		sunset: undefined,
 		error: undefined,
+		saveStatus: '',
 	};
 	getWeather = async e => {
+		this.setState({
+			saveStatus: 'Loading',
+		});
 		const city = e.target.elements.city.value;
 		console.log(city + 'hello');
 		e.preventDefault();
@@ -33,6 +37,12 @@ class App extends React.Component {
 		);
 		const data = await respond.json();
 		console.log(data);
+		if(data.cod==="404"){
+			this.setState({
+				saveStatus:"notFound"
+			})
+		}
+		else{
 		this.setState({
 			temperature: data.main.temp,
 			city: data.name,
@@ -47,8 +57,9 @@ class App extends React.Component {
 			minTemp: data.main.temp_min,
 			sunrise: data.sys.sunrise,
 			sunset: data.sys.sunset,
-			error: '',
+			saveStatus: 'Success',
 		});
+	}
 	};
 
 	renderDivTemp = () => {
@@ -84,9 +95,8 @@ class App extends React.Component {
 		if (this.state.city === undefined) return '';
 		else {
 			return (
-				
 				<div className="div-wrapper-content">
-				<Comments />
+					<Comments />
 				</div>
 			);
 		}
@@ -96,10 +106,14 @@ class App extends React.Component {
 			<div className="div-main">
 				<Titles />
 				<Form getWeather={this.getWeather} />
+				<div style={{marginBottom:'20px'}}>
+				{this.state.saveStatus === 'Loading' && <div className="div-loading">Searching City name...</div>}
+				{this.state.saveStatus === 'notFound' && <div className="div-notFound">City Name Not Found</div>}
+				</div>
 				{this.renderDivTemp()}
 				{this.renderDivTemp1()}
-				</div>
-				
+
+			</div>
 		);
 	}
 }

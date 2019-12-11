@@ -113,7 +113,7 @@ input {
 .div-comments{
   position: relative;
   width:800px;
-  height:25vh;
+  height:auto;
   margin: auto;
   padding:7px 0;
 }
@@ -135,4 +135,38 @@ textarea::placeholder{
   margin-top:5px;
   padding: 5px;
   color:white
+}
+.div-loading{
+  position: relative;
+  margin: auto;
+  display: flex;
+  padding: 0px 10px;
+  align-items: center ;
+  width: 840px;
+  height:10vh;
+  border:none;
+  color: gray;
+  box-shadow:0px 0px 10px 1px #7c7c7c;
+}
+.div-addComment{
+  margin-top:8px;
+  position: relative;
+  height:auto;
+  width:800px;
+  border: none;
+  padding:5px;
+  background-color: #F9EDFF;
+}
+.div-notFound{
+  position: relative;
+  margin: auto;
+  display: flex;
+  padding: 0px 10px;
+  align-items: center ;
+  justify-content: center;
+  width: 840px;
+  height:10vh;
+  border:none;
+  color: gray;
+  box-shadow:0px 0px 10px 1px #7c7c7c;
 }
