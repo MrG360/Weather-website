@@ -37,29 +37,28 @@ class App extends React.Component {
 		);
 		const data = await respond.json();
 		console.log(data);
-		if(data.cod==="404"){
+		if (data.cod === '404') {
 			this.setState({
-				saveStatus:"notFound"
-			})
+				saveStatus: 'notFound',
+			});
+		} else {
+			this.setState({
+				temperature: data.main.temp,
+				city: data.name,
+				country: data.sys.country,
+				date: data.name,
+				icon: data.weather[0].icon,
+				weather: data.weather[0].description,
+				wind: data.wind.speed,
+				humidity: data.main.humidity,
+				pressure: data.main.pressure,
+				maxTemp: data.main.temp_max,
+				minTemp: data.main.temp_min,
+				sunrise: data.sys.sunrise,
+				sunset: data.sys.sunset,
+				saveStatus: 'Success',
+			});
 		}
-		else{
-		this.setState({
-			temperature: data.main.temp,
-			city: data.name,
-			country: data.sys.country,
-			date: data.name,
-			icon: data.weather[0].icon,
-			weather: data.weather[0].description,
-			wind: data.wind.speed,
-			humidity: data.main.humidity,
-			pressure: data.main.pressure,
-			maxTemp: data.main.temp_max,
-			minTemp: data.main.temp_min,
-			sunrise: data.sys.sunrise,
-			sunset: data.sys.sunset,
-			saveStatus: 'Success',
-		});
-	}
 	};
 
 	renderDivTemp = () => {
@@ -106,13 +105,12 @@ class App extends React.Component {
 			<div className="div-main">
 				<Titles />
 				<Form getWeather={this.getWeather} />
-				<div style={{marginBottom:'20px'}}>
-				{this.state.saveStatus === 'Loading' && <div className="div-loading">Searching City name...</div>}
-				{this.state.saveStatus === 'notFound' && <div className="div-notFound">City Name Not Found</div>}
+				<div style={{ marginBottom: '20px' }}>
+					{this.state.saveStatus === 'Loading' && <div className="div-loading">Searching City name...</div>}
+					{this.state.saveStatus === 'notFound' && <div className="div-notFound">City Name Not Found</div>}
 				</div>
 				{this.renderDivTemp()}
 				{this.renderDivTemp1()}
-
 			</div>
 		);
 	}

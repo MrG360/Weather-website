@@ -24,19 +24,19 @@
 	position: relative;
 	margin: 5vh auto;
 }
-form{
-  display: flex;
+form {
+	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
-  width: auto;
-  height: auto;
+	width: auto;
+	height: auto;
 }
 input {
 	width: 500px;
 	height: 6vh;
 	border: 1px solid #141414;
 	padding: 10px;
-	box-shadow:0px 0px 5px 0px #5a5a5a;
+	box-shadow: 0px 0px 5px 0px #5a5a5a;
 }
 .search-btn {
 	margin: 0 10px;
@@ -48,125 +48,125 @@ input {
 	border: none;
 	color: white;
 	background: #585858;
-  transition: 0.3s ease-in-out all;
-  box-shadow: 0px 0px 5px 0px #5a5a5a;
+	transition: 0.3s ease-in-out all;
+	box-shadow: 0px 0px 5px 0px #5a5a5a;
 }
 .search-btn:hover {
 	box-shadow: 0px 0px 12px 1px #5a5a5a;
 	transition: 0.3s ease-in-out all;
 }
-.div-wrapper-content{
-  width:850px;
-  position: relative;
-  margin: auto;
-  margin-bottom: 3vh;
-  height: auto;
-  padding: 5px;
-  box-shadow:0px 0px 10px 1px #7c7c7c;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+.div-wrapper-content {
+	width: 850px;
+	position: relative;
+	margin: auto;
+	margin-bottom: 3vh;
+	height: auto;
+	padding: 5px;
+	box-shadow: 0px 0px 10px 1px #7c7c7c;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
 }
-.wrapper{
-  width:420px;
-  min-height: 5vh;
+.wrapper {
+	width: 420px;
+	min-height: 5vh;
 }
-.left{
+.left {
 }
-.right{
-  padding: 3vh 0;
+.right {
+	padding: 3vh 0;
 }
-.div-location{
-  width: 100%;
-  height: auto;
-  padding: 2px 0;
-  text-transform: capitalize;
-  display: flex;
-  flex-direction: row;
+.div-location {
+	width: 100%;
+	height: auto;
+	padding: 2px 0;
+	text-transform: capitalize;
+	display: flex;
+	flex-direction: row;
 }
-.span-location{
-  margin-right:10px;
-  color: #5a5a5a;
+.span-location {
+	margin-right: 10px;
+	color: #5a5a5a;
 }
-.div-left-temp{
-  font-size:4em;
-  font-weight: bold;
-  text-align: center;
-  color: #141414;
-  margin:95px 0;
-  font-family: 'Roboto', sans-serif;
+.div-left-temp {
+	font-size: 4em;
+	font-weight: bold;
+	text-align: center;
+	color: #141414;
+	margin: 95px 0;
+	font-family: 'Roboto', sans-serif;
 }
-.degree{
-  font-size:60px;
-  font-family: 'Roboto', sans-serif;
+.degree {
+	font-size: 60px;
+	font-family: 'Roboto', sans-serif;
 }
-.div-right-content{
-  position: relative;
-  width: 380px;
-  margin:1px auto 5px auto;
-  height: 70px;
-  padding:10px 35px;
-  display: flex;
-  flex-direction: column;
-  color: #141414;
+.div-right-content {
+	position: relative;
+	width: 380px;
+	margin: 1px auto 5px auto;
+	height: 70px;
+	padding: 10px 35px;
+	display: flex;
+	flex-direction: column;
+	color: #141414;
 }
-.div-comments{
-  position: relative;
-  width:800px;
-  height:auto;
-  margin: auto;
-  padding:7px 0;
+.div-comments {
+	position: relative;
+	width: 800px;
+	height: auto;
+	margin: auto;
+	padding: 7px 0;
 }
-textarea{
-  height:15vh;
-  width:100%;
-  border: none;
-  padding:5px;
-  background-color: #F9EDFF;
-  font-size:20px;
+textarea {
+	height: 15vh;
+	width: 100%;
+	border: none;
+	padding: 5px;
+	background-color: #f9edff;
+	font-size: 20px;
 }
-textarea::placeholder{
-  font-size:20px;
+textarea::placeholder {
+	font-size: 20px;
 }
-.button-comment{
-  background:#6565f8;
-  font-size:25px;
-  border:none;
-  margin-top:5px;
-  padding: 5px;
-  color:white
+.button-comment {
+	background: #6565f8;
+	font-size: 25px;
+	border: none;
+	margin-top: 5px;
+	padding: 5px;
+	color: white;
 }
-.div-loading{
-  position: relative;
-  margin: auto;
-  display: flex;
-  padding: 0px 10px;
-  align-items: center ;
-  width: 840px;
-  height:10vh;
-  border:none;
-  color: gray;
-  box-shadow:0px 0px 10px 1px #7c7c7c;
+.div-loading {
+	position: relative;
+	margin: auto;
+	display: flex;
+	padding: 0px 10px;
+	align-items: center;
+	width: 840px;
+	height: 10vh;
+	border: none;
+	color: gray;
+	box-shadow: 0px 0px 10px 1px #7c7c7c;
 }
-.div-addComment{
-  margin-top:8px;
-  position: relative;
-  height:auto;
-  width:800px;
-  border: none;
-  padding:5px;
-  background-color: #F9EDFF;
+.div-addComment {
+	margin-top: 8px;
+	position: relative;
+	height: auto;
+	width: 800px;
+	border: none;
+	padding: 5px;
+	background-color: #f9edff;
 }
-.div-notFound{
-  position: relative;
-  margin: auto;
-  display: flex;
-  padding: 0px 10px;
-  align-items: center ;
-  justify-content: center;
-  width: 840px;
-  height:10vh;
-  border:none;
-  color: gray;
-  box-shadow:0px 0px 10px 1px #7c7c7c;
+.div-notFound {
+	position: relative;
+	margin: auto;
+	display: flex;
+	padding: 0px 10px;
+	align-items: center;
+	justify-content: center;
+	width: 840px;
+	height: 10vh;
+	border: none;
+	color: gray;
+	box-shadow: 0px 0px 10px 1px #7c7c7c;
 }
