@@ -59,9 +59,10 @@ input {
   width:850px;
   position: relative;
   margin: auto;
+  margin-bottom: 3vh;
   height: auto;
   padding: 5px;
-  box-shadow:-2px 5px 10px 1px #7c7c7c;
+  box-shadow:0px 0px 10px 1px #7c7c7c;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -70,9 +71,68 @@ input {
   width:420px;
   min-height: 5vh;
 }
-.wrapper .left{
-  background: aqua;
+.left{
 }
 .right{
-  background: #6500f2;
+  padding: 3vh 0;
+}
+.div-location{
+  width: 100%;
+  height: auto;
+  padding: 2px 0;
+  text-transform: capitalize;
+  display: flex;
+  flex-direction: row;
+}
+.span-location{
+  margin-right:10px;
+  color: #5a5a5a;
+}
+.div-left-temp{
+  font-size:4em;
+  font-weight: bold;
+  text-align: center;
+  color: #141414;
+  margin:95px 0;
+  font-family: 'Roboto', sans-serif;
+}
+.degree{
+  font-size:60px;
+  font-family: 'Roboto', sans-serif;
+}
+.div-right-content{
+  position: relative;
+  width: 380px;
+  margin:1px auto 5px auto;
+  height: 70px;
+  padding:10px 35px;
+  display: flex;
+  flex-direction: column;
+  color: #141414;
+}
+.div-comments{
+  position: relative;
+  width:800px;
+  height:25vh;
+  margin: auto;
+  padding:7px 0;
+}
+textarea{
+  height:15vh;
+  width:100%;
+  border: none;
+  padding:5px;
+  background-color: #F9EDFF;
+  font-size:20px;
+}
+textarea::placeholder{
+  font-size:20px;
+}
+.button-comment{
+  background:#6565f8;
+  font-size:25px;
+  border:none;
+  margin-top:5px;
+  padding: 5px;
+  color:white
 }

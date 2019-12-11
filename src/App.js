@@ -8,7 +8,7 @@ import './App.css';
 
 const API_KEY = 'd72ea79d6b0aebe78cf24341141aa15a';
 class App extends React.Component {
-  state = {
+	state = {
 		temperature: undefined,
 		city: undefined,
 		country: undefined,
@@ -23,10 +23,10 @@ class App extends React.Component {
 		sunrise: undefined,
 		sunset: undefined,
 		error: undefined,
-  }
-	getWeather = async (e) => {
+	};
+	getWeather = async e => {
 		const city = e.target.elements.city.value;
-		console.log(city+"hello");
+		console.log(city + 'hello');
 		e.preventDefault();
 		const respond = await fetch(
 			`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
@@ -50,35 +50,56 @@ class App extends React.Component {
 			error: '',
 		});
 	};
+
+	renderDivTemp = () => {
+		if (this.state.city === undefined) return '';
+		else {
+			return (
+				<div className="div-wrapper-content">
+					<LeftWeather
+						className="wrapper left"
+						temperature={this.state.temperature}
+						date={this.state.date}
+						country={this.state.country}
+						city={this.state.city}
+						icon={this.state.icon}
+						error={this.state.error}
+					/>
+					<RightWeather
+						className="wrapper right"
+						weather={this.state.weather}
+						wind={this.state.wind}
+						humidity={this.state.humidity}
+						pressure={this.state.pressure}
+						maxTemp={this.state.maxTemp}
+						minTemp={this.state.minTemp}
+						sunrise={this.state.sunrise}
+						sunset={this.state.sunset}
+					/>
+				</div>
+			);
+		}
+	};
+	renderDivTemp1 = () => {
+		if (this.state.city === undefined) return '';
+		else {
+			return (
+				
+				<div className="div-wrapper-content">
+				<Comments />
+				</div>
+			);
+		}
+	};
 	render() {
 		return (
 			<div className="div-main">
-				<Titles/>
+				<Titles />
 				<Form getWeather={this.getWeather} />
-				<div className="div-wrapper-content">
-				<LeftWeather 
-					className="wrapper left"
-					temperature={this.state.temperature}
-					date={this.state.date}
-					country={this.state.country}
-					city={this.state.city}
-					icon={this.state.icon}
-					error={this.state.error}
-				/>
-				<RightWeather 
-					className="wrapper right"
-					weather={this.state.weather}
-					wind={this.state.wind}
-					humidity={this.state.humidity}
-					pressure={this.state.pressure}
-					maxTemp={this.state.maxTemp}
-					minTemp={this.state.minTemp}
-					sunrise={this.state.sunrise}
-					sunset={this.state.sunset}
-				/>
+				{this.renderDivTemp()}
+				{this.renderDivTemp1()}
 				</div>
-				<Comments />
-			</div>
+				
 		);
 	}
 }

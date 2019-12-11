@@ -2,9 +2,9 @@ import React from "react";
 class Comments extends React.Component{
     render(){
         return(
-            <div className='App'>
+            <div className='div-comments'>
                 <textarea name="addcomments" placeholder="Enter your comment here..."></textarea><br/>
-                <button>Comment</button>
+                <button className="button-comment">Comment</button>
             </div>
         );
     }
