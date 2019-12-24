@@ -30,11 +30,22 @@ class App extends React.Component {
 			saveStatus: 'Loading',
 		});
 		const city = e.target.elements.city.value;
+		if(city==='')
+		{
+			this.setState({
+				saveStatus:'notFound',
+			})
+			e.preventDefault();
+			return;
+			
+		}
+		e.preventDefault();
 		console.log(city + 'hello');
 		e.preventDefault();
 		const respond = await fetch(
 			`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
 		);
+		console.log(respond);
 		const data = await respond.json();
 		console.log(data);
 		if (data.cod === '404') {
