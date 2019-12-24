@@ -72,8 +72,6 @@ input {
 	width: 420px;
 	min-height: 5vh;
 }
-.left {
-}
 .right {
 	padding: 3vh 0;
 }
@@ -85,6 +83,7 @@ input {
 	display: flex;
 	flex-direction: row;
 }
+
 .span-location {
 	margin-right: 10px;
 	color: #5a5a5a;

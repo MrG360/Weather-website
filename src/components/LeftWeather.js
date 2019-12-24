@@ -1,14 +1,12 @@
 import React from 'react';
+import GetIcon from './GetIcon';
 import Img from 'react-image';
-import getIcon from './components/getIcon';
 class LeftWeather extends React.Component {
-	state={
-		icon:'',
-	}
 	stringUpdate = props => {
-		if (props.city === undefined) return '';
+		if (this.props.city === undefined) return '';
 		var date = new Date();
 		console.log(date.getDate());
+		console.log(this.props.icon);
 		return (
 			this.props.city +
 			', ' +
@@ -63,7 +61,7 @@ class LeftWeather extends React.Component {
 					<span className="span-location">{this.stringUpdate()}</span>
 				</div>
 				<div className="div-left-temp">
-					{this.props.temperature} <span className="degree"> &#176;</span>C <span><getIcon icon={this.state.icon}/></span>
+					{this.props.temperature} <span className="degree"> &#176;C <GetIcon icon={this.props.icon}/></span>
 				</div>
 			</div>
 		);
