@@ -20,7 +20,6 @@ class Comments extends React.Component {
 		this.setState({
 			comment: event.target.value,
 		});
-		console.log(this.state.comment);
 	};
 	render() {
 		return (
@@ -42,7 +41,6 @@ class Comments extends React.Component {
 							<h4 style={{ marginBottom: '5px' }}>
 								<i className="fas fa-user"></i> {elem}
 							</h4>
-							<hr />
 						</div>
 					))}
 				</div>

@@ -1,12 +1,10 @@
 import React from 'react';
 import GetIcon from './GetIcon';
-import Img from 'react-image';
 class LeftWeather extends React.Component {
+	//Top-Right side Date and Time
 	stringUpdate = props => {
 		if (this.props.city === undefined) return '';
 		var date = new Date();
-		console.log(date.getDate());
-		console.log(this.props.icon);
 		return (
 			this.props.city +
 			', ' +
@@ -14,37 +12,47 @@ class LeftWeather extends React.Component {
 			',' +
 			this.returnDay(date.getDay()) +
 			' ' +
-			(this.returnMonth(date.getMonth())) +
+			this.returnMonth(date.getMonth()) +
 			' ' +
 			date.getDate() +
 			' ' +
 			date.getFullYear()
 		);
 	};
-	
-	// returnIcon=()=>{
-	// 	const icon=this.props.icon;
-	// 	console.log(icon);
-	// 	return "http://openweathermap.org/img/wn/"+icon+"@2x.png";
-		
-	// }
-	returnMonth=val=>{
-		switch(val){
-			case 1: return "Jan";
-			case 2: return "Feb";
-			case 3: return "Mar";
-			case 4: return "Apr";
-			case 5: return "May";
-			case 6: return "Jun"; 
-			case 7: return "Jul";
-			case 8: return "Aug";
-			case 9: return "Sep";
-			case 10: return "Oct";
-			case 11: return "Nov";
-			case 12: return "Dec";
-			default: return "";
-			}
-	}
+
+	//Function to calculate month
+	returnMonth = val => {
+		switch (val) {
+			case 1:
+				return 'Jan';
+			case 2:
+				return 'Feb';
+			case 3:
+				return 'Mar';
+			case 4:
+				return 'Apr';
+			case 5:
+				return 'May';
+			case 6:
+				return 'Jun';
+			case 7:
+				return 'Jul';
+			case 8:
+				return 'Aug';
+			case 9:
+				return 'Sep';
+			case 10:
+				return 'Oct';
+			case 11:
+				return 'Nov';
+			case 12:
+				return 'Dec';
+			default:
+				return '';
+		}
+	};
+
+	//Function to calculate Day
 	returnDay = val => {
 		if (val === 1) return ' Mon';
 		else if (val === 2) return ' Tue';
@@ -54,6 +62,8 @@ class LeftWeather extends React.Component {
 		else if (val === 6) return ' Sat';
 		else return ' Sun';
 	};
+
+	// Temperature Displays Here
 	render() {
 		return (
 			<div className="wrapper left">
@@ -61,7 +71,11 @@ class LeftWeather extends React.Component {
 					<span className="span-location">{this.stringUpdate()}</span>
 				</div>
 				<div className="div-left-temp">
-					{this.props.temperature} <span className="degree"> &#176;C <GetIcon icon={this.props.icon}/></span>
+					{this.props.temperature}{' '}
+					<span className="degree">
+						{' '}
+						&#176;C <GetIcon icon={this.props.icon} />
+					</span>
 				</div>
 			</div>
 		);

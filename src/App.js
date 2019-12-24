@@ -9,6 +9,7 @@ import './App.css';
 
 const API_KEY = 'd72ea79d6b0aebe78cf24341141aa15a';
 class App extends React.Component {
+	// Variables declared here
 	state = {
 		temperature: undefined,
 		city: undefined,
@@ -26,41 +27,53 @@ class App extends React.Component {
 		error: undefined,
 		saveStatus: '',
 	};
+
+	//Function for giving Api call to access Weather
 	getWeather = async e => {
 		this.setState({
 			saveStatus: 'Loading',
 		});
 		const city = e.target.elements.city.value;
-		if(city==='')
-		{
+		//Check if city is null and you press enter.
+		if (city === '') {
 			this.setState({
-				saveStatus:'notFound',
-			})
+				saveStatus: 'notFound',
+			});
 			e.preventDefault();
 			return;
-			
 		}
+
+		//To prevent refresh
 		e.preventDefault();
-		console.log(city + 'hello');
-		e.preventDefault();
-		const respond = await fetch(
-			`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
-		);
-		console.log(respond);
-		const data = await respond.json();
-		console.log(data);
+
+		//Api call using try block
+		try {
+			var response = await fetch(
+				`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+			);
+			if (!response.ok) {
+				throw new Error('No data has been received');
+			}
+		} catch (error) {
+			console.log(error.message);
+		}
+
+		//Parsing Data
+		const data = await response.json();
 		if (data.cod === '404') {
 			this.setState({
 				saveStatus: 'notFound',
 			});
-		} else {
+		}
+		//Setting variables after API call.
+		else {
 			this.setState({
 				temperature: data.main.temp,
 				city: data.name,
 				country: data.sys.country,
-				date: data.name,
+				date: data.dt,
 				icon: data.weather[0].icon,
-				weather: data.weather[0].description,
+				weather: data.weather[0].main,
 				wind: data.wind.speed,
 				humidity: data.main.humidity,
 				pressure: data.main.pressure,
@@ -72,7 +85,7 @@ class App extends React.Component {
 			});
 		}
 	};
-
+	//Main Display
 	renderDivTemp = () => {
 		if (this.state.city === undefined) return '';
 		else {
@@ -87,7 +100,7 @@ class App extends React.Component {
 						icon={this.state.icon}
 						error={this.state.error}
 					/>
-					
+
 					<RightWeather
 						className="wrapper right"
 						weather={this.state.weather}
@@ -103,6 +116,8 @@ class App extends React.Component {
 			);
 		}
 	};
+
+	//Comments Section
 	renderDivTemp1 = () => {
 		if (this.state.city === undefined) return '';
 		else {

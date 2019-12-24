@@ -1,15 +1,19 @@
 import React from 'react';
 class RightWeather extends React.Component {
-	returnSun = val => {
-		let value = new Date(val);
+	// Function to calculate Sunrise and Sunset
+	msToTime = duration => {
+		var seconds = Math.floor((duration / 1000) % 60);
+		var minutes = Math.floor((duration / (1000 * 60)) % 60);
+		var hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
 
-		if (value.getHours() < 10) return '0' + value.getHours() + ':' + value.getMinutes() + ':' + value.getSeconds();
-		else if (value.getMinutes() < 10)
-			return value.getHours() + ':0' + value.getMinutes() + ':' + value.getSeconds();
-		else if (value.getSeconds() < 10)
-			return value.getHours() + ':' + value.getMinutes() + ':0' + value.getSeconds();
-		else return value.getHours() + ':' + value.getMinutes() + ':' + value.getSeconds();
+		hours = hours < 10 ? '0' + hours : hours;
+		minutes = minutes < 10 ? '0' + minutes : minutes;
+		seconds = seconds < 10 ? '0' + seconds : seconds;
+
+		return hours + ':' + minutes + ':' + seconds;
 	};
+
+	//RighWeather UI
 	render() {
 		return (
 			<div className="wrapper right">
@@ -45,10 +49,10 @@ class RightWeather extends React.Component {
 				</div>
 				<div className="div-right-content">
 					<div>
-						<h4>Sunrise : {this.returnSun(this.props.sunrise)}</h4>{' '}
+						<h4>Sunrise : {this.msToTime(this.props.sunrise)}</h4>{' '}
 					</div>
 					<div>
-						<h4>Sunset : {this.returnSun(this.props.sunset)}</h4>{' '}
+						<h4>Sunset : {this.msToTime(this.props.sunset)}</h4>{' '}
 					</div>
 				</div>
 			</div>
