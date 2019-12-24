@@ -4,6 +4,7 @@ import Form from './components/Form';
 import LeftWeather from './components/LeftWeather';
 import RightWeather from './components/RightWeather';
 import Comments from './components/Comments';
+import getIcon from './components/getIcon';
 import './App.css';
 
 const API_KEY = 'd72ea79d6b0aebe78cf24341141aa15a';
@@ -83,9 +84,10 @@ class App extends React.Component {
 						date={this.state.date}
 						country={this.state.country}
 						city={this.state.city}
-						icon={this.state.icon}
+						
 						error={this.state.error}
 					/>
+					
 					<RightWeather
 						className="wrapper right"
 						weather={this.state.weather}

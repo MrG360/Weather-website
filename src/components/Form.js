@@ -4,7 +4,7 @@ class Form extends React.Component {
 		return (
 			<div className="div-search-bar">
 				<form onSubmit={this.props.getWeather}>
-					<input type="text" name="city" placeholder="Enter city name here..." />
+					<input type="text" name="city" placeholder="Enter City Name..." />
 					<button className="search-btn">Search</button>
 				</form>
 			</div>

@@ -32,13 +32,13 @@ class RightWeather extends React.Component {
 				<div className="div-right-content">
 					<div>
 						<h4>
-							Max temperature : {this.props.maxTemp}
+							Max Temp : {this.props.maxTemp}
 							<sup>o</sup>C
 						</h4>{' '}
 					</div>
 					<div>
 						<h4>
-							Min Temperature : {this.props.minTemp}
+							Min Temp : {this.props.minTemp}
 							<sup>o</sup>C
 						</h4>{' '}
 					</div>

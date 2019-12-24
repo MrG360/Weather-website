@@ -35,19 +35,20 @@ input {
 	width: 500px;
 	height: 6vh;
 	border: 1px solid #141414;
-	padding: 10px;
+	padding: 5px;
+	font-size: large;
 	box-shadow: 0px 0px 5px 0px #5a5a5a;
 }
 .search-btn {
 	margin: 0 10px;
 	width: 150px;
 	text-align: center;
-	padding: 9px;
-	font-weight: bold;
-	font-size: 18px;
+	padding: 0px;
+	/* font-weight: bold; */
+	font-size: 30px;
 	border: none;
 	color: white;
-	background: #585858;
+	background: #6500F2;
 	transition: 0.3s ease-in-out all;
 	box-shadow: 0px 0px 5px 0px #5a5a5a;
 }
