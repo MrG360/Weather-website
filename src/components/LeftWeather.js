@@ -1,5 +1,5 @@
 import React from 'react';
-import GetIcon from './GetIcon';
+import GetIcon from './getIcon';
 class LeftWeather extends React.Component {
 	//Top-Right side Date and Time
 	stringUpdate = props => {
