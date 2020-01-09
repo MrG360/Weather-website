@@ -1,5 +1,5 @@
 import React from 'react';
-import GetIcon from './getIcon';
+import getIcon from './getIcon';
 class LeftWeather extends React.Component {
 	//Top-Right side Date and Time
 	stringUpdate = props => {
@@ -73,7 +73,7 @@ class LeftWeather extends React.Component {
 				<div className="div-left-temp">
 					<div>{this.props.temperature} </div>
 					<div className="degree"> &#176;C</div>
-					<GetIcon icon={this.props.icon} />
+					<getIcon icon={this.props.icon} />
 				</div>
 			</div>
 		);
