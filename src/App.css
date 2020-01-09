@@ -91,9 +91,11 @@ input {
 .div-left-temp {
 	font-size: 4em;
 	font-weight: bold;
+	display:flex;
+	flex-direction: row;
 	text-align: center;
 	color: #141414;
-	margin: 95px 0;
+	margin: 95px 60px 95px 60px;
 	font-family: 'Roboto', sans-serif;
 }
 .degree {

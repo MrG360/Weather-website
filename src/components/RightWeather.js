@@ -49,10 +49,10 @@ class RightWeather extends React.Component {
 				</div>
 				<div className="div-right-content">
 					<div>
-						<h4>Sunrise : {this.msToTime(this.props.sunrise)}</h4>{' '}
+						<h4>Sunrise : {this.props.sunrise}</h4>{' '}
 					</div>
 					<div>
-						<h4>Sunset : {this.msToTime(this.props.sunset)}</h4>{' '}
+						<h4>Sunset : {this.props.sunset}</h4>{' '}
 					</div>
 				</div>
 			</div>

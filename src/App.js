@@ -60,6 +60,7 @@ class App extends React.Component {
 
 		//Parsing Data
 		const data = await response.json();
+		console.log(data);
 		if (data.cod === '404') {
 			this.setState({
 				saveStatus: 'notFound',
@@ -79,8 +80,8 @@ class App extends React.Component {
 				pressure: data.main.pressure,
 				maxTemp: data.main.temp_max,
 				minTemp: data.main.temp_min,
-				sunrise: data.sys.sunrise,
-				sunset: data.sys.sunset,
+				sunrise: new Date(data.sys.sunrise*1000).toLocaleTimeString(),
+				sunset: new Date(data.sys.sunset*1000).toLocaleTimeString(),
 				saveStatus: 'Success',
 			});
 		}

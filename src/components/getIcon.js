@@ -4,7 +4,7 @@ class GetIcon extends React.Component {
 	render() {
 		const icon = this.props.icon;
 		const handle = `http://openweathermap.org/img/wn/${icon}@2x.png`;
-		return <img className="img-icon" src={handle} alt="Logo" />;
+		return <div className="div-icon"><img className="img-icon" src={handle} alt="Logo" /></div>;
 	}
 }
 export default GetIcon;

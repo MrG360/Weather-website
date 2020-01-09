@@ -71,11 +71,9 @@ class LeftWeather extends React.Component {
 					<span className="span-location">{this.stringUpdate()}</span>
 				</div>
 				<div className="div-left-temp">
-					{this.props.temperature}{' '}
-					<span className="degree">
-						{' '}
-						&#176;C <GetIcon icon={this.props.icon} />
-					</span>
+					<div>{this.props.temperature} </div>
+					<div className="degree"> &#176;C</div>
+					<GetIcon icon={this.props.icon} />
 				</div>
 			</div>
 		);
